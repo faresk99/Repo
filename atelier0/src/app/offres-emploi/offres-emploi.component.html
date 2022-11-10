@@ -1,0 +1,26 @@
+<p>offres-emploi works!</p>
+
+<table>
+    <tr>
+        <th>Reference</th>
+        <th>Titre</th>
+        <th>Entreprise</th>
+        <th>Etat</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let i of listeEmploi">
+        <td>{{i.reference}}</td>
+        <td>{{i.titre}}</td>
+        <td>{{i.entreprise}}</td>
+        <td>{{i.etat}}</td>
+        <td>
+            <button [disabled]="i.etat==false">Postuler</button>
+        </td>
+    </tr>
+</table>
+
+<h1>
+    <button (click)="x=bilan()">Bilan</button>
+    <p [hidden]="x==0">Le nombre des offres d’emploi non clôturées = {{x}}</p>
+</h1>
+
